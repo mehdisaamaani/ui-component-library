@@ -1,12 +1,23 @@
-import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
-import type { Theme } from "@mui/material/styles";
-import { ReactNode } from "react";
+"use client";
 
-export interface ThemeProviderProps {
-  theme: Theme;
-  children: ReactNode;
-}
+import { createTheme } from "@/shared/styles";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { PropsWithChildren } from "react";
+import { prefixer } from "stylis";
+import rtlPlugin from "stylis-plugin-rtl";
 
-export const ThemeProvider = ({ theme, children }: ThemeProviderProps) => {
-  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
-};
+const rtlCache = createCache({
+  key: "muirtl",
+  stylisPlugins: [prefixer, rtlPlugin],
+});
+
+export const AppThemeProvider = ({ children }: PropsWithChildren) => (
+  <CacheProvider value={rtlCache}>
+    <ThemeProvider theme={createTheme()}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  </CacheProvider>
+);
