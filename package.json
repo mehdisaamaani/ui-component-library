@@ -1,6 +1,6 @@
 {
-  "name": "ui-component-library",
-  "version": "0.1.0",
+  "name": "barook-ui-library",
+  "version": "0.1.1",
   "description": "A scalable, testable UI component library built with React, TypeScript, MUI, Storybook, and Jest",
   "author": "Mehdi_Samani",
   "license": "MIT",
