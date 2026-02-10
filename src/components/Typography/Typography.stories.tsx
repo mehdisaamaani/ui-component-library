@@ -12,7 +12,7 @@ export const Small = () => (
 );
 
 export const BaseBold = () => (
-  <Typography variant="body2" fontWeight="xBold">
+  <Typography variant="body1" fontWeight="xBold">
     Base xBold
   </Typography>
 );
