@@ -11,8 +11,10 @@ export type ExtendedTypographyProps = TypographyProps & {
   fontWeight?: "regular" | "medium" | "xBold" | "bold" | number;
 };
 
-export const Typography = forwardRef<HTMLSpanElement, ExtendedTypographyProps>((props, ref) => {
-  return <MuiTypography ref={ref} {...props} />;
-});
+export const Typography = forwardRef<HTMLSpanElement, ExtendedTypographyProps>(
+  (props, ref) => {
+    return <MuiTypography ref={ref} {...props} />;
+  },
+);
 
 Typography.displayName = "Typography";
