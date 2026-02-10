@@ -69,6 +69,7 @@
     "react-toastify": "^11.0.5",
     "stylis": "4.2.0",
     "stylis-plugin-rtl": "^2.1.1",
+    "tss-react": "^4.9.20",
     "url": "^0.11.4"
   }
 }
