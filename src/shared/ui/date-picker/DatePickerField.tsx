@@ -22,8 +22,14 @@ type DatePickerFieldProps = Omit<DatePickerProps, "onChange" | "value"> & {
   range?: boolean;
 };
 
-export const DatePickerField = forwardRef<HTMLInputElement, DatePickerFieldProps>(
-  ({ label, error, helperText, onChange, inputProps, range, ...props }, ref) => {
+export const DatePickerField = forwardRef<
+  HTMLInputElement,
+  DatePickerFieldProps
+>(
+  (
+    { label, error, helperText, onChange, inputProps, range, ...props },
+    ref,
+  ) => {
     return (
       <Stack gap={1}>
         {label && (
@@ -46,7 +52,11 @@ export const DatePickerField = forwardRef<HTMLInputElement, DatePickerFieldProps
               slotProps={{
                 input: {
                   endAdornment: (
-                    <SvgIcon component={CalendarMonthIcon} sx={{ cursor: "pointer", mr: 1 }} onClick={openCalendar} />
+                    <SvgIcon
+                      component={CalendarMonthIcon}
+                      sx={{ cursor: "pointer", mr: 1 }}
+                      onClick={openCalendar}
+                    />
                   ),
                 },
               }}

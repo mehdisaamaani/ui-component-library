@@ -9,7 +9,12 @@ type Props = ExtendedTypographyProps & {
   showZero?: boolean;
 };
 
-export const PriceView = ({ value, withRial, showZero = false, ...props }: Props) => {
+export const PriceView = ({
+  value,
+  withRial,
+  showZero = false,
+  ...props
+}: Props) => {
   return (
     <Typography display="flex" gap={0.5} dir="ltr" {...props}>
       {withRial ? (

@@ -31,6 +31,6 @@
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src"],
+  "include": ["src", "svgr.d.ts","src/types"],
   "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.stories.*"]
 }

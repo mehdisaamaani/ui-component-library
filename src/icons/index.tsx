@@ -110,7 +110,17 @@ import WalletSolidIcon from "@heroicons/react/24/solid/WalletIcon";
 import CancelIcon from "@heroicons/react/24/solid/XCircleIcon";
 import CloseIcon from "@heroicons/react/24/solid/XMarkIcon";
 
+import UnCheckIcon from "./un-check-icon.svg";
+import CheckIcon from "./check-icon.svg";
+import UnCheckBoxIcon from "./un-check-box-icon.svg";
+import CheckDisabledBoxIcon from "./check-disabled-box-icon.svg";
+import CheckBoxIcon from "./check-box-icon.svg";
+
 export {
+  CheckIcon,
+  UnCheckBoxIcon,
+  CheckBoxIcon,
+  CheckDisabledBoxIcon,
   AdjustmentsHorizontalIcon,
   ArrowDownIcon,
   ArrowDownTrayIcon,
@@ -212,4 +222,5 @@ export {
   WarningSolidIcon,
   XCircleIcon,
   ZoomOutMapIcon,
+  UnCheckIcon,
 };

@@ -1,12 +1,14 @@
 "use client";
 
 import { SwipeableDrawer, SwipeableDrawerProps } from "@mui/material";
-import noop from "lodash/noop";
 import type { PropsWithChildren, ReactNode } from "react";
 import { Box } from "../box";
 import { DialogHeader } from "../dialog/DialogHeader";
 
-export type BottomSheetProps = Omit<SwipeableDrawerProps, "open" | "onOpen" | "onClose"> & {
+export type BottomSheetProps = Omit<
+  SwipeableDrawerProps,
+  "open" | "onOpen" | "onClose"
+> & {
   title?: string;
   closeButton?: boolean;
   headerIcon?: ReactNode;
@@ -28,6 +30,9 @@ export const BottomSheet = ({
   hideTouchBar,
   ...restProps
 }: PropsWithChildren<BottomSheetProps>) => {
+  const onHandleOpen = () => {
+    onOpen;
+  };
   return (
     <SwipeableDrawer
       disableSwipeToOpen
@@ -37,7 +42,7 @@ export const BottomSheet = ({
         ...ModalProps,
       }}
       onClose={onClose}
-      onOpen={onOpen || noop}
+      onOpen={onOpen || onHandleOpen}
       {...restProps}
     >
       <Box
@@ -58,7 +63,11 @@ export const BottomSheet = ({
           },
         }}
       />
-      {title && <DialogHeader closeButton={closeButton ? onClose : undefined}>{title}</DialogHeader>}
+      {title && (
+        <DialogHeader closeButton={closeButton ? onClose : undefined}>
+          {title}
+        </DialogHeader>
+      )}
       <Box>{children}</Box>
     </SwipeableDrawer>
   );

@@ -1,10 +1,10 @@
 "use client";
 
-import { useIsMobile } from "@/hooks";
 import type { DialogProps as MuiDialogProps } from "@mui/material";
 import { Dialog as MuiDialog } from "@mui/material";
 import { forwardRef, ReactNode } from "react";
 import { DialogHeader } from "./DialogHeader";
+import { useIsMobile } from "@/hooks";
 
 export type DialogProps = Omit<MuiDialogProps, "open" | "onClose" | "title"> & {
   title?: ReactNode;
@@ -14,7 +14,10 @@ export type DialogProps = Omit<MuiDialogProps, "open" | "onClose" | "title"> & {
 };
 
 export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
-  ({ children, open, title, slotProps, onClose, isTitleFixe, ...props }, ref) => {
+  (
+    { children, open, title, slotProps, onClose, isTitleFixe, ...props },
+    ref,
+  ) => {
     const isMobile = useIsMobile();
 
     return (
@@ -27,7 +30,9 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
             ...(typeof slotProps?.paper === "object" ? slotProps.paper : {}),
             sx: {
               padding: 2,
-              ...(typeof slotProps?.paper === "object" && slotProps.paper?.sx ? slotProps.paper.sx : {}),
+              ...(typeof slotProps?.paper === "object" && slotProps.paper?.sx
+                ? slotProps.paper.sx
+                : {}),
             },
           },
         }}

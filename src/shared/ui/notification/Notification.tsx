@@ -1,6 +1,11 @@
 "use client";
 
-import { CancelIcon, CheckCircleIcon, InformationCircleIcon, WarningSolidIcon } from "@/icons";
+import {
+  CancelIcon,
+  CheckCircleIcon,
+  InformationCircleIcon,
+  WarningSolidIcon,
+} from "@/icons";
 import { SxProps } from "@mui/material";
 import { ElementType, PropsWithChildren } from "react";
 import { Stack } from "../stack";
@@ -35,11 +40,7 @@ interface PropsType extends PropsWithChildren {
   rounded?: boolean;
   sx?: SxProps;
 }
-const iconVariants: {
-  [key: string]: {
-    component: ElementType;
-  };
-} = {
+const iconVariants: Record<NotificationVariant, { component: ElementType }> = {
   default: { component: InformationCircleIcon },
   success: { component: CheckCircleIcon },
   error: { component: CancelIcon },
