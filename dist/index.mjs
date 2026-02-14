@@ -38886,6 +38886,7 @@ var { makeStyles } = createMakeStyles({ useTheme: useTheme5 });
 import createCache2 from "@emotion/cache";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
+import { deepmerge as deepmerge14 } from "@mui/utils";
 import { jsx as jsx44, jsxs as jsxs22 } from "react/jsx-runtime";
 var rtlCache = createCache2({
   key: "muirtl",
@@ -38893,11 +38894,14 @@ var rtlCache = createCache2({
 });
 var AppThemeProvider = ({
   children,
-  themOverride
-}) => /* @__PURE__ */ jsx44(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ jsxs22(ThemeProvider4, { theme: themOverride ? themOverride : createTheme3(), children: [
-  /* @__PURE__ */ jsx44(CssBaseline_default, {}),
-  children
-] }) });
+  themeOverride
+}) => {
+  const theme = themeOverride ? deepmerge14(createTheme3(), themeOverride) : createTheme3();
+  return /* @__PURE__ */ jsx44(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ jsxs22(ThemeProvider4, { theme, children: [
+    /* @__PURE__ */ jsx44(CssBaseline_default, {}),
+    children
+  ] }) });
+};
 export {
   AppThemeProvider,
   AutoCompleteField,

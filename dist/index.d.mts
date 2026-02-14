@@ -315,8 +315,8 @@ declare const Tooltip: react.ForwardRefExoticComponent<Omit<TooltipProps, "ref">
 
 type AppThemeProviderType = {
     children: React.ReactNode;
-    themOverride: any;
+    themeOverride: any;
 };
-declare const AppThemeProvider: ({ children, themOverride, }: AppThemeProviderType) => react_jsx_runtime.JSX.Element;
+declare const AppThemeProvider: ({ children, themeOverride, }: AppThemeProviderType) => react_jsx_runtime.JSX.Element;
 
 export { AppThemeProvider, AutoCompleteField, type AutoCompleteFieldProps, Avatar, Backdrop, Badge, BottomSheet, type BottomSheetProps, Box, Button, Card, CardContent, CheckBox, Chip, CircularProgress, ContainedTab, ContainedTabs, Container, DatePickerBottomSheet, type DatePickerBottomSheetProps, DatePickerField, Dialog, type DialogProps, Divider, DotProgress, ExcelButton, type ExtendedTypographyProps, Grid, HelperText, HelperTextContent, type HelperTextContentProps, type HelperTextProps, IconButton, List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Menu, MenuItem, Modal, MultiSelectField, MultiSelectRadioField, Notification, NumberInputField, type NumberInputFieldProps, type OptionsType, OtpField, Paper, PasswordField, PhoneInputField, type PhoneInputFieldProps, PriceView, RadioBox, SearchField, type SearchFieldProps, SelectDialog, type SelectDialogProps, SelectField, type SelectFieldProps, type SelectOption, Skeleton, Slider, Stack, StepperContainer, SvgIcon, Tab, Tabs, TextField, type TextFieldProps, Tooltip, Typography };

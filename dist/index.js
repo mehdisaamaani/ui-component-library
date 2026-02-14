@@ -38948,6 +38948,7 @@ var { makeStyles } = (0, import_tss_react.createMakeStyles)({ useTheme: useTheme
 var import_cache3 = __toESM(require("@emotion/cache"));
 var import_stylis = require("stylis");
 var import_stylis_plugin_rtl = __toESM(require("stylis-plugin-rtl"));
+var import_utils27 = require("@mui/utils");
 var import_jsx_runtime145 = require("react/jsx-runtime");
 var rtlCache = (0, import_cache3.default)({
   key: "muirtl",
@@ -38955,11 +38956,14 @@ var rtlCache = (0, import_cache3.default)({
 });
 var AppThemeProvider = ({
   children,
-  themOverride
-}) => /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ (0, import_jsx_runtime145.jsxs)(ThemeProvider4, { theme: themOverride ? themOverride : createTheme3(), children: [
-  /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CssBaseline_default, {}),
-  children
-] }) });
+  themeOverride
+}) => {
+  const theme = themeOverride ? (0, import_utils27.deepmerge)(createTheme3(), themeOverride) : createTheme3();
+  return /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ (0, import_jsx_runtime145.jsxs)(ThemeProvider4, { theme, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CssBaseline_default, {}),
+    children
+  ] }) });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AppThemeProvider,
