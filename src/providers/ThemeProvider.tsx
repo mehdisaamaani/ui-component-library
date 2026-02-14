@@ -4,7 +4,6 @@ import { createTheme } from "@/shared/styles";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { PropsWithChildren } from "react";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 
@@ -15,18 +14,26 @@ const rtlCache = createCache({
 
 type AppThemeProviderType = {
   children: React.ReactNode;
-  themOverride: any;
+  themeOverride: any;
 };
 export const AppThemeProvider = ({
   children,
-  themOverride,
-}: AppThemeProviderType) => (
-  <CacheProvider value={rtlCache}>
-    <ThemeProvider theme={themOverride ? themOverride : createTheme()}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
-  </CacheProvider>
-);
+  themeOverride,
+}: AppThemeProviderType) => {
+  const theme = themeOverride
+    ? deepmerge(createTheme(), themeOverride)
+    : createTheme();
+
+  return (
+    <CacheProvider value={rtlCache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </CacheProvider>
+  );
+};
 
 export default AppThemeProvider;
+import { deepmerge } from "@mui/utils";
+import { Theme } from "@mui/material/styles";
