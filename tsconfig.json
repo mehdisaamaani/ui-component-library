@@ -22,6 +22,7 @@
 
     "isolatedModules": true,
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
 
     "baseUrl": ".",
     "paths": {
@@ -31,6 +32,6 @@
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src", "svgr.d.ts","types.ts"],
+  "include": ["src", "svgr.d.ts","/types/mui-augmentation.d.ts", ],
   "exclude": ["dist", "node_modules", "**/*.test.*", "**/*.stories.*"]
 }

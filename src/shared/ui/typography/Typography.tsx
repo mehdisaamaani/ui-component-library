@@ -10,6 +10,7 @@ import { forwardRef } from "react";
 export type ExtendedTypographyProps = TypographyProps & {
   fontWeight?: "regular" | "medium" | "xBold" | "bold" | number;
 };
+console.log("MuiTypography version", MuiTypography);
 
 export const Typography = forwardRef<HTMLSpanElement, ExtendedTypographyProps>(
   (props, ref) => {
