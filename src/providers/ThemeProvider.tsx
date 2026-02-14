@@ -21,3 +21,5 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => (
     </ThemeProvider>
   </CacheProvider>
 );
+
+export default AppThemeProvider;

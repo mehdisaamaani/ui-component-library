@@ -7,12 +7,12 @@ export default {
   component: Typography,
 };
 
-export const Small = () => (
-  <Typography variant="caption">Small Text</Typography>
-);
+export const Small = () => <Typography variant="3xl">Small Text</Typography>;
 
 export const BaseBold = () => (
-  <Typography variant="body2" fontWeight="xBold">
-    Base xBold
-  </Typography>
+  <>
+    <Typography variant="3xl" color="primary" fontWeight="xBold">
+      Base xBold
+    </Typography>
+  </>
 );

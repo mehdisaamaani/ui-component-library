@@ -107,11 +107,27 @@ export const createTheme = (overrides?: ThemeOptions) => {
     MuiAvatar: MuiAvatar(mergedTheme),
     MuiDialog: MuiDialog(mergedTheme),
     MuiCheckbox: MuiCheckbox(mergedTheme),
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          xxs: "p",
+          xs: "p",
+          sm: "p",
+          base: "p",
+          lg: "p",
+          xl: "h6",
+          "2xl": "h5",
+          "3xl": "h4",
+          "4xl": "h3",
+          "5xl": "h2",
+        },
+      },
+    },
   }) satisfies Components<Theme>;
   const mainMuiTheme = createMuiTheme({
     ...mergedTheme,
     components,
   });
-
+  console.log("mainMuiTheme", mainMuiTheme.typography);
   return mainMuiTheme;
 };

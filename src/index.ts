@@ -33,3 +33,4 @@ export * from "./shared/ui/tab";
 export * from "./shared/ui/text-field";
 export * from "./shared/ui/tooltip";
 export * from "./shared/ui/typography";
+export * from "./providers";
