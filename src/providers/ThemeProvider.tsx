@@ -6,6 +6,7 @@ import { CacheProvider } from "@emotion/react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
+import { deepmerge } from "@mui/utils";
 
 const rtlCache = createCache({
   key: "muirtl",
@@ -14,7 +15,7 @@ const rtlCache = createCache({
 
 type AppThemeProviderType = {
   children: React.ReactNode;
-  themeOverride: any;
+  themeOverride?: any;
 };
 export const AppThemeProvider = ({
   children,
@@ -35,5 +36,3 @@ export const AppThemeProvider = ({
 };
 
 export default AppThemeProvider;
-import { deepmerge } from "@mui/utils";
-import { Theme } from "@mui/material/styles";
