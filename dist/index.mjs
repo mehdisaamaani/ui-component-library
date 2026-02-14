@@ -38891,7 +38891,10 @@ var rtlCache = createCache2({
   key: "muirtl",
   stylisPlugins: [prefixer, rtlPlugin]
 });
-var AppThemeProvider = ({ children }) => /* @__PURE__ */ jsx44(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ jsxs22(ThemeProvider4, { theme: createTheme3(), children: [
+var AppThemeProvider = ({
+  children,
+  themOverride
+}) => /* @__PURE__ */ jsx44(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ jsxs22(ThemeProvider4, { theme: themOverride ? themOverride : createTheme3(), children: [
   /* @__PURE__ */ jsx44(CssBaseline_default, {}),
   children
 ] }) });

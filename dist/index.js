@@ -38953,7 +38953,10 @@ var rtlCache = (0, import_cache3.default)({
   key: "muirtl",
   stylisPlugins: [import_stylis.prefixer, import_stylis_plugin_rtl.default]
 });
-var AppThemeProvider = ({ children }) => /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ (0, import_jsx_runtime145.jsxs)(ThemeProvider4, { theme: createTheme3(), children: [
+var AppThemeProvider = ({
+  children,
+  themOverride
+}) => /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CacheProvider, { value: rtlCache, children: /* @__PURE__ */ (0, import_jsx_runtime145.jsxs)(ThemeProvider4, { theme: themOverride ? themOverride : createTheme3(), children: [
   /* @__PURE__ */ (0, import_jsx_runtime145.jsx)(CssBaseline_default, {}),
   children
 ] }) });

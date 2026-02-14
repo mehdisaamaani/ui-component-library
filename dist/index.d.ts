@@ -313,6 +313,10 @@ declare const SearchField: react.ForwardRefExoticComponent<Omit<SearchFieldProps
 
 declare const Tooltip: react.ForwardRefExoticComponent<Omit<TooltipProps, "ref"> & react.RefAttributes<HTMLDivElement>>;
 
-declare const AppThemeProvider: ({ children }: PropsWithChildren) => react_jsx_runtime.JSX.Element;
+type AppThemeProviderType = {
+    children: React.ReactNode;
+    themOverride: any;
+};
+declare const AppThemeProvider: ({ children, themOverride, }: AppThemeProviderType) => react_jsx_runtime.JSX.Element;
 
 export { AppThemeProvider, AutoCompleteField, type AutoCompleteFieldProps, Avatar, Backdrop, Badge, BottomSheet, type BottomSheetProps, Box, Button, Card, CardContent, CheckBox, Chip, CircularProgress, ContainedTab, ContainedTabs, Container, DatePickerBottomSheet, type DatePickerBottomSheetProps, DatePickerField, Dialog, type DialogProps, Divider, DotProgress, ExcelButton, type ExtendedTypographyProps, Grid, HelperText, HelperTextContent, type HelperTextContentProps, type HelperTextProps, IconButton, List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Menu, MenuItem, Modal, MultiSelectField, MultiSelectRadioField, Notification, NumberInputField, type NumberInputFieldProps, type OptionsType, OtpField, Paper, PasswordField, PhoneInputField, type PhoneInputFieldProps, PriceView, RadioBox, SearchField, type SearchFieldProps, SelectDialog, type SelectDialogProps, SelectField, type SelectFieldProps, type SelectOption, Skeleton, Slider, Stack, StepperContainer, SvgIcon, Tab, Tabs, TextField, type TextFieldProps, Tooltip, Typography };
