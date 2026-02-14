@@ -36370,6 +36370,7 @@ var IconButton3 = IconButton_default;
 // src/shared/ui/typography/Typography.tsx
 var import_react10 = require("react");
 var import_jsx_runtime105 = require("react/jsx-runtime");
+console.log("MuiTypography version", Typography_default);
 var Typography3 = (0, import_react10.forwardRef)(
   (props, ref) => {
     return /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(Typography_default, { ref, ...props });
@@ -38913,12 +38914,29 @@ var createTheme3 = (overrides) => {
     MuiSlider: MuiSlider(mergedTheme),
     MuiAvatar: MuiAvatar(mergedTheme),
     MuiDialog: MuiDialog(mergedTheme),
-    MuiCheckbox: MuiCheckbox(mergedTheme)
+    MuiCheckbox: MuiCheckbox(mergedTheme),
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          xxs: "p",
+          xs: "p",
+          sm: "p",
+          base: "p",
+          lg: "p",
+          xl: "h6",
+          "2xl": "h5",
+          "3xl": "h4",
+          "4xl": "h3",
+          "5xl": "h2"
+        }
+      }
+    }
   });
   const mainMuiTheme = createTheme2({
     ...mergedTheme,
     components
   });
+  console.log("mainMuiTheme", mainMuiTheme.typography);
   return mainMuiTheme;
 };
 

@@ -13,9 +13,16 @@ const rtlCache = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 
-export const AppThemeProvider = ({ children }: PropsWithChildren) => (
+type AppThemeProviderType = {
+  children: React.ReactNode;
+  themOverride: any;
+};
+export const AppThemeProvider = ({
+  children,
+  themOverride,
+}: AppThemeProviderType) => (
   <CacheProvider value={rtlCache}>
-    <ThemeProvider theme={createTheme()}>
+    <ThemeProvider theme={themOverride ? themOverride : createTheme()}>
       <CssBaseline />
       {children}
     </ThemeProvider>
