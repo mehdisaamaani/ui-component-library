@@ -315,7 +315,7 @@ declare const Tooltip: react.ForwardRefExoticComponent<Omit<TooltipProps, "ref">
 
 type AppThemeProviderType = {
     children: React.ReactNode;
-    themeOverride: any;
+    themeOverride?: any;
 };
 declare const AppThemeProvider: ({ children, themeOverride, }: AppThemeProviderType) => react_jsx_runtime.JSX.Element;
 
