@@ -9,6 +9,7 @@ import { useMemo } from "react";
 
 type AppThemeProviderType = {
   children: React.ReactNode;
+  isTheme?: boolean;
   themeOverride?: ThemeOptions;
   direction?: "rtl" | "ltr";
   withCssBaseline?: boolean;
@@ -19,11 +20,10 @@ export const AppThemeProvider = ({
   themeOverride,
   direction = "rtl",
   withCssBaseline = false,
+  isTheme = true,
 }: AppThemeProviderType) => {
   const theme = useMemo(() => {
-    return themeOverride
-      ? createBarookTheme(themeOverride)
-      : createBarookTheme();
+    return isTheme ? createBarookTheme(themeOverride) : createBarookTheme();
   }, [themeOverride]);
 
   const cache = useMemo(

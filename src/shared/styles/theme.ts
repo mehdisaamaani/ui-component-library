@@ -8,10 +8,13 @@ import { baseThemeOptions } from "./baseThemeOptions";
 import { getComponentOverrides } from "./componentOverrides";
 
 export const createBarookTheme = (overrides?: ThemeOptions) => {
-  let theme = createMuiTheme(deepmerge(baseThemeOptions, overrides ?? {}));
+  let theme = createMuiTheme(overrides ?? {});
 
+  const mergedComponents = {
+    ...(theme.components ?? {}),
+  };
   theme = createMuiTheme(theme, {
-    components: getComponentOverrides(theme),
+    components: mergedComponents,
   });
 
   return theme;
