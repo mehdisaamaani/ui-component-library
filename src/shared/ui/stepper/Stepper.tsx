@@ -1,6 +1,10 @@
-"use client";
-
-import { Step, StepIconProps, StepLabel, Stepper, StepperProps } from "@mui/material";
+import {
+  Step,
+  StepIconProps,
+  StepLabel,
+  Stepper,
+  StepperProps,
+} from "@mui/material";
 import { ElementType, JSX } from "react";
 import { Typography } from "../typography";
 
@@ -20,14 +24,23 @@ export const StepperContainer = ({
   props,
 }: Props) => {
   return (
-    <Stepper alternativeLabel activeStep={activeStep} sx={{ width: 1 }} {...props}>
+    <Stepper
+      alternativeLabel
+      activeStep={activeStep}
+      sx={{ width: 1 }}
+      {...props}
+    >
       {steps.map((label, index) => (
         <Step key={index}>
           <StepLabel slots={{ stepIcon: DynamicStepIcon }}>
             <Typography
               variant="xs"
               fontWeight="medium"
-              color={activeStep > index || activeStep === index ? activeColor : "grey.200"}
+              color={
+                activeStep > index || activeStep === index
+                  ? activeColor
+                  : "grey.200"
+              }
             >
               {label}
             </Typography>

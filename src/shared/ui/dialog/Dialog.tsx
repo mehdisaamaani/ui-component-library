@@ -1,5 +1,3 @@
-"use client";
-
 import type { DialogProps as MuiDialogProps } from "@mui/material";
 import { Dialog as MuiDialog } from "@mui/material";
 import { forwardRef, ReactNode } from "react";

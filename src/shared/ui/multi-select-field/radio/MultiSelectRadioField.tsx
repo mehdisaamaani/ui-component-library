@@ -1,13 +1,19 @@
-"use client";
-
-import { FormHelperText, ListItemText, Select, SelectProps } from "@mui/material";
+import {
+  FormHelperText,
+  ListItemText,
+  Select,
+  SelectProps,
+} from "@mui/material";
 import { forwardRef } from "react";
 import { RadioBox } from "../../checkBox";
 import { MenuItem } from "../../menu";
 import { Stack } from "../../stack";
 import { Typography } from "../../typography";
 
-type MultiSelectRadioFieldProps = Omit<SelectProps, "label" | "value" | "onChange"> & {
+type MultiSelectRadioFieldProps = Omit<
+  SelectProps,
+  "label" | "value" | "onChange"
+> & {
   options?: { label: string; value: string }[];
   helperText?: string;
   label?: string;
@@ -19,7 +25,15 @@ type MultiSelectRadioFieldProps = Omit<SelectProps, "label" | "value" | "onChang
 
 export const MultiSelectRadioField = forwardRef(
   (
-    { label, options = [], error, helperText, value = [], onChange, ...props }: MultiSelectRadioFieldProps,
+    {
+      label,
+      options = [],
+      error,
+      helperText,
+      value = [],
+      onChange,
+      ...props
+    }: MultiSelectRadioFieldProps,
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const handleSelectAll = () => {
@@ -58,7 +72,10 @@ export const MultiSelectRadioField = forwardRef(
           }}
           ref={ref}
           renderValue={(selected) => {
-            if (!selected || (Array.isArray(selected) && selected.length === 0)) {
+            if (
+              !selected ||
+              (Array.isArray(selected) && selected.length === 0)
+            ) {
               return "همه";
             }
             return options
@@ -83,11 +100,16 @@ export const MultiSelectRadioField = forwardRef(
           {options.map(({ label, value: optionValue }) => (
             <MenuItem key={optionValue} value={optionValue}>
               <ListItemText primary={label} />
-              <RadioBox checked={value.includes(optionValue)} onChange={() => handleOptionToggle(optionValue)} />
+              <RadioBox
+                checked={value.includes(optionValue)}
+                onChange={() => handleOptionToggle(optionValue)}
+              />
             </MenuItem>
           ))}
         </Select>
-        {helperText && <FormHelperText error={!!error}>{helperText}</FormHelperText>}
+        {helperText && (
+          <FormHelperText error={!!error}>{helperText}</FormHelperText>
+        )}
       </Stack>
     );
   },

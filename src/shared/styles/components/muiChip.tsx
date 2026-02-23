@@ -1,5 +1,3 @@
-"use client";
-
 import { DeleteIcon } from "@/icons";
 import type { Components, Theme } from "@mui/material";
 import { SvgIcon } from "@mui/material";
@@ -31,7 +29,10 @@ export const MuiChip = (theme: Theme): Components["MuiChip"] => ({
   variants: [
     {
       props: { variant: "filled", color: "default" },
-      style: { background: theme.palette.grey[50], color: theme.palette.text.fifth },
+      style: {
+        background: theme.palette.grey[50],
+        color: theme.palette.text.fifth,
+      },
     },
     {
       props: { variant: "filled", color: "success" },

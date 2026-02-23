@@ -1,6 +1,10 @@
-"use client";
-
-import { FormHelperText, MenuItem, Select, SelectProps, Typography } from "@mui/material";
+import {
+  FormHelperText,
+  MenuItem,
+  Select,
+  SelectProps,
+  Typography,
+} from "@mui/material";
 import { forwardRef, ReactNode } from "react";
 import { Stack } from "../stack";
 
@@ -12,7 +16,10 @@ export type SelectFieldProps = Omit<SelectProps, "label"> & {
 };
 
 export const SelectField = forwardRef(
-  ({ label, options = [], error, helperText, ...props }: SelectFieldProps, ref: React.Ref<HTMLDivElement>) => {
+  (
+    { label, options = [], error, helperText, ...props }: SelectFieldProps,
+    ref: React.Ref<HTMLDivElement>,
+  ) => {
     return (
       <Stack gap={1}>
         {label && (

@@ -1,10 +1,17 @@
-"use client";
-
-import { FormHelperText, MenuItem, Select, SelectProps, Typography } from "@mui/material";
+import {
+  FormHelperText,
+  MenuItem,
+  Select,
+  SelectProps,
+  Typography,
+} from "@mui/material";
 import { forwardRef, ReactNode } from "react";
 import { Stack } from "../stack";
 
-type MultiSelectFieldProps = Omit<SelectProps, "label" | "value" | "onChange"> & {
+type MultiSelectFieldProps = Omit<
+  SelectProps,
+  "label" | "value" | "onChange"
+> & {
   options?: { label: string; value: string | number }[];
   helperText?: string;
   label?: ReactNode;
@@ -14,7 +21,14 @@ type MultiSelectFieldProps = Omit<SelectProps, "label" | "value" | "onChange"> &
 
 export const MultiSelectField = forwardRef(
   (
-    { label, options = [], error, helperText, value = "", ...props }: MultiSelectFieldProps,
+    {
+      label,
+      options = [],
+      error,
+      helperText,
+      value = "",
+      ...props
+    }: MultiSelectFieldProps,
     ref: React.Ref<HTMLDivElement>,
   ) => {
     return (
@@ -36,7 +50,9 @@ export const MultiSelectField = forwardRef(
                 return label;
               }
               return options
-                .filter((option) => (selected as string[]).includes(option.label))
+                .filter((option) =>
+                  (selected as string[]).includes(option.label),
+                )
                 .map((option) => option.label)
                 .join(", ");
             }}

@@ -1,6 +1,13 @@
-"use client";
-import type { AutocompleteProps, TextFieldProps as MuiTextFieldProps } from "@mui/material";
-import { Autocomplete, FormHelperText, TextField, Typography } from "@mui/material";
+import type {
+  AutocompleteProps,
+  TextFieldProps as MuiTextFieldProps,
+} from "@mui/material";
+import {
+  Autocomplete,
+  FormHelperText,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { forwardRef, JSX, useMemo } from "react";
 import { Stack } from "../stack";
 
@@ -17,7 +24,10 @@ export interface AutoCompleteFieldProps extends Omit<
   helperText?: string;
 }
 
-export const AutoCompleteField = forwardRef<HTMLInputElement, AutoCompleteFieldProps>(function AutoCompleteField(
+export const AutoCompleteField = forwardRef<
+  HTMLInputElement,
+  AutoCompleteFieldProps
+>(function AutoCompleteField(
   { label, textFieldsProps, onChange, value, helperText, ...props },
   ref,
 ): JSX.Element {
@@ -44,7 +54,9 @@ export const AutoCompleteField = forwardRef<HTMLInputElement, AutoCompleteFieldP
         onChange={(_, newValue) => {
           onChange?.(newValue?.value);
         }}
-        renderInput={(params) => <TextField {...params} {...textFieldsProps} size="small" />}
+        renderInput={(params) => (
+          <TextField {...params} {...textFieldsProps} size="small" />
+        )}
       />
       {helperText && <FormHelperText error>{helperText}</FormHelperText>}
     </Stack>

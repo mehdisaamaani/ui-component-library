@@ -1,5 +1,3 @@
-"use client";
-
 import { SmallCheckIcon } from "@/icons";
 import { Dialog, SearchField, Stack, SvgIcon } from "@/shared/ui";
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
@@ -43,7 +41,13 @@ export const SelectDialog = ({
   const list = [...options];
 
   return (
-    <Dialog open={open} onClose={onClose} fullScreen title={title} sx={{ zIndex: 3001 }}>
+    <Dialog
+      open={open}
+      onClose={onClose}
+      fullScreen
+      title={title}
+      sx={{ zIndex: 3001 }}
+    >
       <Stack overflow="hidden">
         {hasSearch && (
           <SearchField
@@ -56,7 +60,11 @@ export const SelectDialog = ({
         <List sx={{ overflow: "auto" }} className="hide-scrollbar">
           {list.map(({ label, value }) => (
             <ListItem key={value} disablePadding disableGutters>
-              <ListItemButton onClick={() => handleSelect(value)} disableGutters selected={selectedValue === value}>
+              <ListItemButton
+                onClick={() => handleSelect(value)}
+                disableGutters
+                selected={selectedValue === value}
+              >
                 <ListItemText
                   primary={label}
                   sx={{

@@ -1,11 +1,13 @@
-"use client";
 import { CheckBoxIcon, CheckDisabledBoxIcon, UnCheckBoxIcon } from "@/icons";
 import { Checkbox, CheckboxProps } from "@mui/material";
 import { forwardRef } from "react";
 import { SvgIcon } from "../svg-icon";
 
 export const CheckBox = forwardRef(
-  ({ checked, onChange, disabled, ...props }: CheckboxProps, ref: React.Ref<HTMLButtonElement>) => {
+  (
+    { checked, onChange, disabled, ...props }: CheckboxProps,
+    ref: React.Ref<HTMLButtonElement>,
+  ) => {
     return (
       <Checkbox
         {...props}
@@ -14,8 +16,16 @@ export const CheckBox = forwardRef(
         checked={checked}
         disabled={disabled}
         ref={ref}
-        icon={<SvgIcon fontSize="medium">{disabled ? <CheckDisabledBoxIcon /> : <UnCheckBoxIcon />}</SvgIcon>}
-        checkedIcon={<SvgIcon fontSize="medium">{disabled ? <CheckDisabledBoxIcon /> : <CheckBoxIcon />}</SvgIcon>}
+        icon={
+          <SvgIcon fontSize="medium">
+            {disabled ? <CheckDisabledBoxIcon /> : <UnCheckBoxIcon />}
+          </SvgIcon>
+        }
+        checkedIcon={
+          <SvgIcon fontSize="medium">
+            {disabled ? <CheckDisabledBoxIcon /> : <CheckBoxIcon />}
+          </SvgIcon>
+        }
       />
     );
   },

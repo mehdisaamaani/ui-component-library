@@ -33,3 +33,5 @@ export * from "./tab";
 export * from "./text-field";
 export * from "./tooltip";
 export * from "./typography";
+export * from "./drawerMenu";
+export * from "./cardTable";

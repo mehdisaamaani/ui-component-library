@@ -1,5 +1,3 @@
-"use client";
-
 import { convertToEnglishNumbers } from "@/utils";
 import { Typography } from "@mui/material";
 import type { JSX, Ref } from "react";
@@ -13,13 +11,19 @@ export type NumberInputFieldProps = TextFieldProps & {
   ref?: Ref<any>;
 };
 
-const isValidNumberInput = (value: string): boolean => /^[٠-٩۰-۹0-9,]*$/.test(value);
+const isValidNumberInput = (value: string): boolean =>
+  /^[٠-٩۰-۹0-9,]*$/.test(value);
 
-export const NumberInputField = forwardRef<HTMLInputElement, NumberInputFieldProps>(function NumberInputField(
+export const NumberInputField = forwardRef<
+  HTMLInputElement,
+  NumberInputFieldProps
+>(function NumberInputField(
   { placeholder, label, helperText, error, slotProps, onChange, ...props },
   ref,
 ): JSX.Element {
-  const [internalValue, setInternalValue] = useState<string>(props.value?.toString() || "");
+  const [internalValue, setInternalValue] = useState<string>(
+    props.value?.toString() || "",
+  );
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = e.target.value;
@@ -47,7 +51,13 @@ export const NumberInputField = forwardRef<HTMLInputElement, NumberInputFieldPro
         margin="none"
         label={undefined}
         placeholder={placeholder}
-        helperText={!!helperText && <HelperTextContent type={helperTextType}>{helperText}</HelperTextContent>}
+        helperText={
+          !!helperText && (
+            <HelperTextContent type={helperTextType}>
+              {helperText}
+            </HelperTextContent>
+          )
+        }
         value={internalValue}
         onChange={handleInputChange}
         slotProps={slotProps}

@@ -1,5 +1,3 @@
-"use client";
-
 import { convertToEnglishNumbers } from "@/utils";
 import { Typography } from "@mui/material";
 import type { JSX, Ref } from "react";
@@ -14,10 +12,24 @@ export type PhoneInputFieldProps = TextFieldProps & {
 };
 
 // Allow numbers, plus, dash, parentheses (no spaces)
-const isValidNumberInput = (value: string): boolean => /^[٠-٩۰-۹0-9,+\-()]*$/.test(value);
+const isValidNumberInput = (value: string): boolean =>
+  /^[٠-٩۰-۹0-9,+\-()]*$/.test(value);
 
-export const PhoneInputField = forwardRef<HTMLInputElement, PhoneInputFieldProps>(function PhoneInputField(
-  { placeholder, label, helperText, error, slotProps, disabled, onChange, value, ...props },
+export const PhoneInputField = forwardRef<
+  HTMLInputElement,
+  PhoneInputFieldProps
+>(function PhoneInputField(
+  {
+    placeholder,
+    label,
+    helperText,
+    error,
+    slotProps,
+    disabled,
+    onChange,
+    value,
+    ...props
+  },
   ref,
 ): JSX.Element {
   const formatPhoneNumber = (value: string): string => {
@@ -70,7 +82,8 @@ export const PhoneInputField = forwardRef<HTMLInputElement, PhoneInputFieldProps
 
   // Directly use the 'value' prop passed from the parent for display
   // Ensure it's a string, default to empty string if null/undefined
-  const displayValue = value !== undefined && value !== null ? value.toString() : "";
+  const displayValue =
+    value !== undefined && value !== null ? value.toString() : "";
 
   return (
     <Stack gap={1}>
@@ -84,7 +97,13 @@ export const PhoneInputField = forwardRef<HTMLInputElement, PhoneInputFieldProps
         label={undefined}
         placeholder={placeholder}
         disabled={disabled}
-        helperText={!!helperText && <HelperTextContent type={helperTextType}>{helperText}</HelperTextContent>}
+        helperText={
+          !!helperText && (
+            <HelperTextContent type={helperTextType}>
+              {helperText}
+            </HelperTextContent>
+          )
+        }
         value={displayValue} // Directly use the prop value for display
         onChange={handleInputChange} // Handles input and calls parent's onChange
         slotProps={slotProps}

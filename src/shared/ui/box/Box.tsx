@@ -1,5 +1,3 @@
-"use client";
+import MuiBox, { BoxProps } from "@mui/material/Box";
 
-import { Box as MuiBox } from "@mui/material";
-
-export const Box = MuiBox;
+export const Box: React.FC<BoxProps> = MuiBox;

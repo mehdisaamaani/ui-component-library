@@ -1,5 +1,3 @@
-"use client";
-
 import { CalendarMonthIcon } from "@/icons";
 import { TextFieldProps } from "@mui/material";
 import { forwardRef } from "react";

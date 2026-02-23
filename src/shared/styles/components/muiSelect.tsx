@@ -1,5 +1,3 @@
-"use client";
-
 import { ChevronDownIcon } from "@/icons";
 import type { Components, SvgIconProps, Theme } from "@mui/material";
 import { outlinedInputClasses, SvgIcon } from "@mui/material";

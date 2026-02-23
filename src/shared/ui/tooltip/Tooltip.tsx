@@ -1,4 +1,3 @@
-"use client";
 
 import { Tooltip as MuiTooltip, TooltipProps } from "@mui/material";
 import { forwardRef, Ref } from "react";

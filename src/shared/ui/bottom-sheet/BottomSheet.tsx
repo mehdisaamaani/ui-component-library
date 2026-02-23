@@ -1,5 +1,3 @@
-"use client";
-
 import { SwipeableDrawer, SwipeableDrawerProps } from "@mui/material";
 import type { PropsWithChildren, ReactNode } from "react";
 import { Box } from "../box";

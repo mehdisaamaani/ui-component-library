@@ -1,5 +1,3 @@
-"use client";
-
 import { CloseIcon } from "@/icons";
 import type { DialogTitleProps } from "@mui/material";
 import { DialogTitle, SvgIcon } from "@mui/material";
@@ -27,7 +25,12 @@ export const DialogHeader = forwardRef<HTMLDivElement, DialogHeaderProps>(
         ref={ref}
         {...props}
       >
-        <Typography flex={1} textAlign="center" variant="sm" fontWeight="medium">
+        <Typography
+          flex={1}
+          textAlign="center"
+          variant="sm"
+          fontWeight="medium"
+        >
           {children}
         </Typography>
         {closeButton && (

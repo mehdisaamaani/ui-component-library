@@ -1,5 +1,3 @@
-"use client";
-
 import { Box } from "../box";
 import { Stack } from "../stack";
 

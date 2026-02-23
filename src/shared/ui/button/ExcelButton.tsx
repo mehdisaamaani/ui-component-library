@@ -1,4 +1,3 @@
-"use client";
 
 import moment from "moment-jalaali";
 import { useRef } from "react";

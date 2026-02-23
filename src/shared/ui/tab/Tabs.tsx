@@ -1,5 +1,3 @@
-"use client";
-
 import { Tabs as MuiTabs, TabsProps } from "@mui/material";
 import { forwardRef } from "react";
 

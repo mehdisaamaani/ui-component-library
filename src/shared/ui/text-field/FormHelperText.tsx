@@ -1,5 +1,3 @@
-"use client";
-
 import type { FormHelperTextProps } from "@mui/material";
 import { FormHelperText } from "@mui/material";
 import type { PropsWithChildren } from "react";
@@ -16,7 +14,11 @@ export const HelperTextContent = ({ children }: HelperTextContentProps) => {
 
 export type HelperTextProps = FormHelperTextProps & HelperTextContentProps;
 
-export const HelperText = ({ children, type, ...restProps }: HelperTextProps) => {
+export const HelperText = ({
+  children,
+  type,
+  ...restProps
+}: HelperTextProps) => {
   return (
     <FormHelperText error={type === "error"} {...restProps}>
       <HelperTextContent type={type}>{children}</HelperTextContent>

@@ -1,5 +1,3 @@
-"use client";
-
 import { CheckIcon, UnCheckIcon } from "@/icons";
 import { Checkbox, CheckboxProps } from "@mui/material";
 import { forwardRef } from "react";
@@ -11,7 +9,10 @@ type CheckBoxProps = Omit<CheckboxProps, "label"> & {
 };
 
 export const RadioBox = forwardRef(
-  ({ error, checked, label, onChange, ...props }: CheckBoxProps, ref: React.Ref<HTMLButtonElement>) => {
+  (
+    { error, checked, label, onChange, ...props }: CheckBoxProps,
+    ref: React.Ref<HTMLButtonElement>,
+  ) => {
     return (
       <Checkbox
         onChange={onChange}

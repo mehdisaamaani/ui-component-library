@@ -1,5 +1,3 @@
-"use client";
-
 import { Typography as MuiTypography, TypographyProps } from "@mui/material";
 import { forwardRef } from "react";
 

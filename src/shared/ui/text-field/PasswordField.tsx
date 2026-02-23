@@ -1,5 +1,3 @@
-"use client";
-
 import { EyeIcon, EyeSlashIcon } from "@/icons";
 import {
   IconButtonProps,

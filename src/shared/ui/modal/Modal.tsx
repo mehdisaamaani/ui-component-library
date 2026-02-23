@@ -1,5 +1,3 @@
-"use client";
-
 import { PaperProps } from "@mui/material";
 import { forwardRef, PropsWithChildren } from "react";
 import { BottomSheet } from "../bottom-sheet";

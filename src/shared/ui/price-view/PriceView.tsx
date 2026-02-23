@@ -1,5 +1,3 @@
-"use client";
-
 import { priceSeparator } from "@/utils";
 import { ExtendedTypographyProps, Typography } from "../typography";
 

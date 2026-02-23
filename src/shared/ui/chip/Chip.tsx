@@ -1,4 +1,3 @@
-"use client";
 
 import { ChipProps, Chip as MuiChip } from "@mui/material";
 import { forwardRef } from "react";

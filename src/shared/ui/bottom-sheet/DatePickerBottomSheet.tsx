@@ -1,11 +1,12 @@
-"use client";
-
 import { Drawer, DrawerProps } from "@mui/material";
 import type { PropsWithChildren, ReactNode } from "react";
 import { Box } from "../box";
 import { DialogHeader } from "../dialog/DialogHeader";
 
-export type DatePickerBottomSheetProps = Omit<DrawerProps, "open" | "onOpen" | "onClose"> & {
+export type DatePickerBottomSheetProps = Omit<
+  DrawerProps,
+  "open" | "onOpen" | "onClose"
+> & {
   title?: string;
   closeButton?: boolean;
   headerIcon?: ReactNode;
@@ -53,7 +54,11 @@ export const DatePickerBottomSheet = ({
           },
         }}
       />
-      {title && <DialogHeader closeButton={closeButton ? onClose : undefined}>{title}</DialogHeader>}
+      {title && (
+        <DialogHeader closeButton={closeButton ? onClose : undefined}>
+          {title}
+        </DialogHeader>
+      )}
       <Box>{children}</Box>
     </Drawer>
   );
